@@ -13,11 +13,9 @@
 		2D9A071516A046900081C87E /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2D9A071316A046900081C87E /* Credits.rtf */; };
 		2D9A071816A046900081C87E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9A071716A046900081C87E /* AppDelegate.m */; };
 		2D9A071B16A046900081C87E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D9A071916A046900081C87E /* MainMenu.xib */; };
-		2D9A072216A046A00081C87E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D9A072116A046A00081C87E /* CoreGraphics.framework */; };
 		2D9A072716A049620081C87E /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D9A070716A046900081C87E /* AppKit.framework */; };
 		2DAB0BF816A0E39700B6E3F6 /* ClamshellOpen.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 2DAB0BF716A0E39700B6E3F6 /* ClamshellOpen.iconset */; };
 		2DAB0BFA16A0E8E400B6E3F6 /* icon_512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DAB0BF916A0E8E400B6E3F6 /* icon_512x512.png */; };
-		2DBA3C3116A05A21002C29B6 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DBA3C3016A05A21002C29B6 /* AppKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,10 +32,8 @@
 		2D9A071616A046900081C87E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2D9A071716A046900081C87E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2D9A071A16A046900081C87E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		2D9A072116A046A00081C87E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2DAB0BF716A0E39700B6E3F6 /* ClamshellOpen.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = ClamshellOpen.iconset; sourceTree = "<group>"; };
 		2DAB0BF916A0E8E400B6E3F6 /* icon_512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_512x512.png; sourceTree = "<group>"; };
-		2DBA3C3016A05A21002C29B6 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = ../../../../System/Library/Frameworks/AppKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,9 +42,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D9A072716A049620081C87E /* AppKit.framework in Frameworks */,
-				2D9A072216A046A00081C87E /* CoreGraphics.framework in Frameworks */,
 				2D9A070516A046900081C87E /* Cocoa.framework in Frameworks */,
-				2DBA3C3116A05A21002C29B6 /* AppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,8 +54,6 @@
 			children = (
 				2DAB0BF716A0E39700B6E3F6 /* ClamshellOpen.iconset */,
 				2DAB0BF916A0E8E400B6E3F6 /* icon_512x512.png */,
-				2DBA3C3016A05A21002C29B6 /* AppKit.framework */,
-				2D9A072116A046A00081C87E /* CoreGraphics.framework */,
 				2D9A070A16A046900081C87E /* ClamshellOpen */,
 				2D9A070316A046900081C87E /* Frameworks */,
 				2D9A070116A046900081C87E /* Products */,
@@ -245,7 +237,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.7;
 			};
 			name = Debug;
 		};
@@ -269,7 +261,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = NO;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.7;
 			};
 			name = Release;
 		};
@@ -280,7 +272,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ClamshellOpen/ClamshellOpen-Prefix.pch";
 				INFOPLIST_FILE = "ClamshellOpen/ClamshellOpen-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -293,7 +285,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ClamshellOpen/ClamshellOpen-Prefix.pch";
 				INFOPLIST_FILE = "ClamshellOpen/ClamshellOpen-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
