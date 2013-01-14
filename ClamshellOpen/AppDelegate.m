@@ -21,23 +21,22 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-	//[self setDisplay:CGMainDisplayID()];
-//	CGDisplayCapture([self display]);
+	[self setDisplay:CGMainDisplayID()];
+	
 	CGCaptureAllDisplays();
 	
-	uint32_t numDisplays = -1;
-	CGGetActiveDisplayList(32, nil, &numDisplays);
+	//uint32_t numDisplays = -1;
+	//CGGetActiveDisplayList(32, nil, &numDisplays);
 	
 	CGContextRef context = CGDisplayGetDrawingContext([self display]);
-	NSGraphicsContext *nsGraphicsContext;
-	nsGraphicsContext = [NSGraphicsContext graphicsContextWithGraphicsPort:context flipped:NO];
-	
-	//[NSGraphicsContext saveGraphicsState];
+	NSGraphicsContext *nsGraphicsContext = [NSGraphicsContext graphicsContextWithGraphicsPort:context flipped:NO];
 	[NSGraphicsContext setCurrentContext:nsGraphicsContext];
+	//[NSGraphicsContext saveGraphicsState];
 	
 	CGDisplayModeRef modeRef = CGDisplayCopyDisplayMode([self display]);
 	unsigned long displayWidth = CGDisplayModeGetWidth(modeRef);
 	unsigned long displayHeight = CGDisplayModeGetHeight(modeRef);
+	CGDisplayModeRelease(modeRef);
 
 	NSMutableParagraphStyle *style = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
 	[style setAlignment:NSCenterTextAlignment];
@@ -54,16 +53,11 @@
 	NSRect aRect = NSMakeRect(0.0, displayHeight / 2, displayWidth, 40.0);
 	
 
-	if(numDisplays == 1) {
-		[@"Open the lid. Press escape (or wait 10 seconds)." drawInRect: aRect withAttributes:textAttributes];
-	}
-	/*} else {
-		[@"You need to connect an external display and close the laptop lid before you launch the program.\nPress escape and try again." drawInRect: aRect withAttributes:textAttributes];
-	}*/
+	//[@"Open the lid. Press escape (or wait 10 seconds)." drawInRect: aRect withAttributes:textAttributes];
+	[@"Open the lid. Press escape (or wait 10 seconds)." drawWithRect:aRect options:NSStringDrawingTruncatesLastVisibleLine attributes:textAttributes];
+	//[NSGraphicsContext restoreGraphicsState];
 	
 	[NSTimer scheduledTimerWithTimeInterval: 10.0 target:self selector:@selector(autoClose:) userInfo:nil repeats:NO];
-	
-	//[nsGraphicsContext restoreGraphicsState];
 }
 
 - (void) sendEvent:(NSEvent *)theEvent
